@@ -26,6 +26,7 @@ dependencies:
   dio: ^3.0.9
   flip_card: ^0.4.4
   flutter_svg: ^0.17.3+1
+  google_maps_flutter: ^0.5.28+1
 
 
   # The following adds the Cupertino Icons font to your application.
