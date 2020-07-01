@@ -1,5 +1,6 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class Country extends StatelessWidget {
   final Map country;
@@ -32,7 +33,13 @@ class Country extends StatelessWidget {
             FlipCard(
               direction: FlipDirection.VERTICAL,
               front: CountryCard(title: "Flag"),
-              back: CountryDetailsCard(title:"hello",color: Colors.pinkAccent[400]),
+              back: Card(
+                color: Colors.pink[50],
+                elevation: 10,
+                child: Center(
+                  child: SvgPicture.network(country["flag"],width: 200,),
+                ),
+              ),
             ),
             FlipCard(
               direction: FlipDirection.VERTICAL,
@@ -41,7 +48,12 @@ class Country extends StatelessWidget {
             ),
             FlipCard(
               direction: FlipDirection.VERTICAL,
-              front: CountryCard(title: "on"),
+              front: CountryCard(title: "Language"),
+              back: CountryDetailsCard(title:country["languages"][0]["name"],color: Colors.lime),
+            ),
+            FlipCard(
+              direction: FlipDirection.VERTICAL,
+              front: CountryCard(title: "Show on Map"),
               back: CountryDetailsCard(title:"hello",color: Colors.deepOrange[400]),
             ),
           ],
